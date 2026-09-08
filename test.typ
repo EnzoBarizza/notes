@@ -1,3 +1,3 @@
 #import "lib/notes.typ"
 
-Hello world gasgdasgdg
+Hello world
