@@ -22,14 +22,14 @@
         #grid(
           columns: (1fr, 1fr, 1fr),
           [#line(length: 100%)],
-          [#context counter(page).display("I")],
+          [#context counter(page).display("1")],
           [#line(length: 100%)]
         )
       ]
     }
   )
   set text(font: "Noto Sans", size: 12pt)
-  set heading(numbering: "I.")
+  set heading(numbering: "1.")
   set outline(title: "Sumário")
 
   body
@@ -64,11 +64,11 @@
   pagebreak()
 }
 
-#let def(body) = {
+#let pretty-box(body, color, color2, symbols) = {
   pad(rest: 10pt)[
-    #box(fill: rgb(0, 255, 125, 150), outset: 5pt, inset: 5pt, radius: 10pt)[
-      #text(fill: rgb(0, 155, 100, 255), size: 14pt)[
-        *:=*
+    #box(fill: color, outset: 5pt, inset: 5pt, radius: 10pt)[
+      #text(fill: color2, size: 14pt)[
+        #symbols
       ]
       #align(center + horizon)[
         #body
@@ -76,3 +76,6 @@
     ]
   ]
 }
+
+#let def(body) = pretty-box(body, rgb(0, 255, 125, 150), rgb(0, 155, 100, 255), "Definição")
+#let obs(body) = pretty-box(body, rgb(0, 125, 255, 150), rgb(0, 80, 100, 255), "OBS")
