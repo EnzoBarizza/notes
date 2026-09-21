@@ -165,6 +165,21 @@ $therefore arrow(A B) = B - A <=> B = A + arrow(A B)$ (Lê-se que $arrow(A B)$ "
   + Pegue um representante de $B C$ de $arrow(v)$ com origem em $B$
   + $arrow(u) + arrow(v)$ é o vetor representado pelo segmento $A C$
 
+#cetz.canvas({
+  import cetz.draw: *
+
+  line((0,0), (2,2), mark: (end: ")>", fill: black))
+  line((2,2), (5, 2), mark: (end: ")>", fill:  black))
+  line((0,0), (5,2), mark: (end: ")>", fill: blue), stroke: blue)
+
+  content((0.8, 1.2), [$arrow(u)$])
+  content((3.5, 2.3), [$arrow(v)$])
+  content((2.8, 0.7), [$arrow(u) + arrow(v)$])
+
+  content((-0.2, 0), [$A$])
+  content((5.2, 2), [$B$])
+})
+
 *Def:* A diferença, $arrow(u) - arrow(v)$ é a mesma coisa que $arrow(u) + (-arrow(v))$
 
 === Multiplicação ou produto por escalar
@@ -189,7 +204,7 @@ $therefore arrow(A B) = B - A <=> B = A + arrow(A B)$ (Lê-se que $arrow(A B)$ "
   + $alpha(arrow(u) + arrow(v)) = alpha arrow(u) + alpha arrow(v)$ (Distributiva)
 
 === Produto escalar ou produto interno
-- Produto escalar ou produto interno de dois vetores $arrow(u) = (x_1, y_1, z_1)$ e $arrow(v) = (x_2, y_2, z_2)$ é representado como $arrow(u) dot arrow(v)$ ou $chevron.l arrow(u), arrow(v) chevron.r$, é um número real ($arrow(u) dot arrow(v) in RR$) calculado pela expressão $arrow(v) dot arrow(v) = x_1x_2 + y_1y_2 + z_1z_2$
+- Produto escalar ou produto interno de dois vetores $arrow(u) = (x_1, y_1, z_1)$ e $arrow(v) = (x_2, y_2, z_2)$ é representado como $arrow(u) dot arrow(v)$ ou $chevron.l arrow(u), arrow(v) chevron.r$, é um número real ($arrow(u) dot arrow(v) in RR$) calculado pela expressão $arrow(v) dot arrow(u) = x_1x_2 + y_1y_2 + z_1z_2$
 - *Propriedades:* Para quaisquer $arrow(u), arrow(v), arrow(w) in RR^3$ e $alpha in RR$
   + $arrow(0) dot arrow(u) = 0$
   + $arrow(u) dot arrow(v) = arrow(v) dot arrow(u)$
