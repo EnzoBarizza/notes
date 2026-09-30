@@ -248,7 +248,7 @@ $therefore arrow(A B) = B - A <=> B = A + arrow(A B)$ (Lê-se que $arrow(A B)$ "
 - Obs: se $arrow(u) parallel arrow(v)$ e $arrow(u)$ e $arrow(v)$ tem mesmo sentido $theta = 0$, caso sentido opostos $theta = pi$
 
 === Relação entre produto escalar e angulo entre vetores
-- Se $arrow(u) != 0$ e $arrow(v) != 0$ e $theta$ é o angulo entre $arrow(u)$ e $arrow(v)$ então $arrow(u) dot arrow(v) = ||arrow(u)|| ||arrow(v)||cos(theta)$
+- Se $arrow(u) != 0$ e $arrow(v) != 0$ e $theta$ é o angulo entre $arrow(u)$ e $arrow(v)$, formado quando ambos possuem a mesma origem, então $arrow(u) dot arrow(v) = ||arrow(u)|| ||arrow(v)||cos(theta)$
 
 === Desigualdades relevantes
 + $|arrow(u) dot arrow(v)| <= ||arrow(u)|| ||arrow(v)||$
