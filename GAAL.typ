@@ -213,16 +213,43 @@ $therefore arrow(A B) = B - A <=> B = A + arrow(A B)$ (Lê-se que $arrow(A B)$ "
   + $arrow(u) dot arrow(u) > 0$, se $arrow(u) != 0$ e $arrow(u) dot arrow(u) = 0$ se $arrow(u) = 0$
   + $arrow(u) dot arrow(u) = ||arrow(u)||^2 = sqrt(arrow(u) dot arrow(u))$
 
-#pagebreak()
-
 === Produto vetorial
 - Dados $arrow(u) = (x_1, y_1, z_1)$ e $arrow(v) = (x_2, y_2, z_2) => arrow(u) times arrow(v) = mat(arrow(i), arrow(j), arrow(k); x_1, y_1, z_1; x_2, y_2, z_2, delim: "|")$
 - *Propriedades Básicas:*
   - $arrow(u) times arrow(v) = -(arrow(v) times arrow(u))$
   - $arrow(u) times arrow(v) = arrow(0) <=> arrow(u) parallel arrow(v)$
+  - $arrow(u) times (arrow(v) + arrow(w)) = arrow(u) times arrow(v) + arrow(u) times arrow(w)$
+  - $alpha(arrow(u) times arrow(v)) = (alpha arrow(u)) times arrow(v) = arrow(u) times (alpha arrow(v))$
+  - $arrow(u) dot (arrow(v) times arrow(w)) = (arrow(u) times arrow(v)) dot arrow(w)$ (Produto misto)
   - Direção: $chevron.l arrow(u) times arrow(v), arrow(u) chevron.r = 0$, então $arrow(u) times arrow(v) parallel arrow(u)$ e $chevron.l arrow(u) times arrow(v), arrow(v) chevron.r = 0$, então $arrow(u) times arrow(v) parallel arrow(v)$
   - Se $ chevron.l arrow(u) times arrow(v), arrow(w) chevron.r = 0$, então $arrow(u) times arrow(v) perp arrow(w) $
- 
+- Sentido de $arrow(u) times arrow(v)$:
+  - Sendo $theta$ o ângulo entre $arrow(u)$ e $arrow(v)$ suponhamos que $arrow(u)$, sofre uma rotação de ângulo $theta$ até coincidir com $arrow(v)$. Se os dedos dobrados no sentido da rotação, então o polegar estendido indicar o sentido $arrow(u) times arrow(v)$
+- Norma de $arrow(u) times arrow(v)$:
+  - $||arrow(u) times arrow(v)|| = ||arrow(u)||||arrow(v)||sin(theta)$
+- Identidade de Lagrange:
+  - $||arrow(u) times arrow(v)||^2 = ||arrow(u)||^2||arrow(v)||^2 - (arrow(u) dot arrow(v))^2$
+- Obs: Produto vetorial não é associativo $(arrow(i) times arrow(j)) times arrow(j) != arrow(i) times (arrow(j) times arrow(j))$
+
+=== Produto misto
+- Dados 3 vetores $arrow(u) = (x_1, y_1 ,z_1)$, $arrow(v) = (x_2, y_2, z_2)$ e $arrow(w) = (x_3, y_3, z_3)$ em $RR^3$, o produto misto de $arrow(u), arrow(v), arrow(w)$, nesta ordem, é definido por:
+$ (arrow(u), arrow(v), arrow(w)) = arrow(u) dot (arrow(v) times arrow(w)) = mat(delim: "|", x_1, y_1, z_1; x_2, y_2, z_2; x_3, y_3, z_3) $
+
+- Propriedades
+  + $(arrow(u), arrow(v), arrow(w))$ muda de sinal quando se troca a posição de dois vetores: $ (arrow(u), arrow(v), arrow(w)) = -(arrow(u), arrow(w), arrow(v)) $
+  + Mantem o sinal quando é realizada duas trocas
+  + $(arrow(u) + arrow(x), arrow(v), arrow(w)) = (arrow(u), arrow(v), arrow(w)) + (arrow(x), arrow(v), arrow(w))$, a soma pode estar em qualquer termo
+  + $(alpha arrow(u), arrow(v), arrow(w)) = (arrow(u), alpha arrow(v), arrow(w)) = (arrow(u), arrow(v), alpha arrow(w)) = alpha(arrow(u), arrow(v), arrow(w))$
+  + $(arrow(u), arrow(v), arrow(w)) = 0 <=> arrow(u), arrow(v) $ e $ arrow(w)$ são coplanares
+
+- Interpretação geométrica:
+  - O modulo do produto misto calcula a área do paralelepípedo definido pelos três vetores.
+
+  - $V_"prisma" = V_"paralelepípedo"/2$
+
+  - $V_"tetraedro" = V_"prisma"/3 = V_"paralelepípedo"/6$
+
+
 == Angulo entre vetores
 - O angulo de dois vetores não nulos $arrow(u)$ e $arrow(v)$ é o angulo $theta$ formado pelas semi-retas $O A$ e $O B$ de mesma origem $O$, onde $arrow(u) = arrow(O A)$ e $arrow(v) = arrow(O B)$ e $0 <= theta <= pi$
 
