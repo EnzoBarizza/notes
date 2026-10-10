@@ -5,6 +5,8 @@
 
 #begin-note(aula: "", materia: "Geometria Analítica e Algebra Linear", professor: "Jean Venato Santos")
 
+#let arcsen = math.op("arcsen")
+
 = Vetores
 == Definições gerais
 === Vetor 
@@ -303,3 +305,99 @@ $ (arrow(u), arrow(v), arrow(w)) = arrow(u) dot (arrow(v) times arrow(w)) = mat(
 - Sendo $arrow(w) parallel arrow(v)$, existe $alpha in RR$ tal que $arrow(w) = alpha arrow(v)$
 - $arrow(u) - arrow(w) perp arrow(v)$ onde $chevron.l arrow(u) - arrow(v), arrow(v) chevron.r = 0 => (arrow(u) dot arrow(v))/(||arrow(v)||^2) = alpha$
 - $"proj"^arrow(u)_arrow(v) = (arrow(u) dot arrow(v))/(||arrow(v)||^2) dot arrow(v)$
+
+#pagebreak()
+
+= Retas
+Dados uma reta $r in RR^2 "ou" RR^3$, um ponto $A(x_0, y_0, z_0) in r$ e um vetor $arrow(v) = (a,b,c)$ paralelo a $r$. Um ponto qualquer $P(x, y, z)$ só pertencence a reta $r$ se e somente se $arrow(A P) parallel arrow(v)$ (vetor $arrow(A P)$ paralelo a vetor $arrow(v)$). Portanto pelas propriedades de vetores paralelos $arrow(A P) = t arrow(v) <=> P = A + t arrow(v)$ 
+
+== Equação vetorial da reta
+
+$ r: P = A + t arrow(v) $
+
+$ <=> $ 
+
+$ r: (x,y,z) = (x_0, y_0, z_0) + t (a,b,c) $
+
+A equação acima é chamada de *equação vetorial da reta $r$*, $P$ é um ponto qualquer pertencente a reta, $A$ é um ponto da reta, o vetor $arrow(v)$ é chamado de *vetor diretor* e $t$ é chamado de *parâmetro*.
+
+== Equações paramétricas da reta
+Dada uma reta $ r: (x,y,z) = (x_0, y_0, z_0) + t(a,b,c); t in RR $
+
+$ r: cases(x = x_0 + a t, y = y_0 + b t, z = z_0 + c t) $
+
+Essas três equações são as *equações paramétricas* da reta $r$
+
+== Equações simétricas ou normais da reta
+Dada uma reta $ r: (x,y,z) = (x_0, y_0, z_0) + t(a,b,c); t in RR $
+Se $a,b,c != 0$ então
+$ r: t = (x-x_0)/a = (y-y_0)/b = (z-z_0)/c $
+
+== Equações reduzidas da reta
+A partir das equações simétricas, isolando duas variaveis em função de uma terceira, por $x$, tiramos que
+$ cases(y = m x + n, z = p x + q) => cases(y = a/b x - a/b x_0 + y_0, z = c/a x - c/a x_0 + z_0) $
+Sendo
+$ m = a/b ", " p = c/a ", " n = y_0 - b/a x_0 " e " q = z_0 - c/a x_0 $
+
+== Ângulos entre duas retas
+O ângulo $theta$ entre duas retas $r_1$ e $r_2$, de vetores diretores $arrow(v_1), arrow(v_2)$ respectivamente, é o menor ângulo entre os vetores diretores das retas, ou seja $0 degree<=theta<=90 degree$, o ângulo entre vetores pode ser calculado por $ arccos((|arrow(v_1) dot arrow(v_2)|)/(||arrow(v_1)|| ||arrow(v_2)||)) $
+
+== Posição relativa entre duas retas
+As retas $r_1: (x,y,z) = A_1 + t arrow(v_1)$ e $r_2: (x,y,z) = A_2 + s arrow(v_2)$ podem ser:
+- Reversas, não situadas no mesmo plano, $(arrow(v_1), arrow(v_2), arrow(A_1 A_2)) != 0$
+
+- Coplanares, situadas no mesmo plano, $(arrow(v_1), arrow(v_2), arrow(A_1 A_2)) = 0$
+
+- Concorrentes quando $arrow(v_1) parallel.not arrow(v_2) <=> arrow(v_1) times arrow(v_2) != 0$ e coplanares $(arrow(v_1), arrow(v_2), arrow(A_1 A_2)) = 0$. Neste casso $r_1 inter r_2 = {I}$ (As retas $r_1$ e $r_2$ se instersectão em apenas um ponto $I$)
+
+- Paralelas quando $arrow(v_1) parallel arrow(v_2)$, neste caso $r_1 inter r_2 = emptyset$ ou $r_1 inter r_2 = r_1 "(Coincidentes)"$
+
+= Planos
+
+== Equação geral do plano
+Sejam $A(x_0, y_0, z_0)$ um ponto de uma plano $pi in RR^3$ e $arrow(n) = (a,b,c) != arrow(0)$ um vetor ortogonal (normal) a $pi$. como $arrow(n) perp pi$, $arrow(n)$ é ortogonal a todo vetor representado em $pi$, assim, $P(x,y,z) in pi <=> arrow(A P) perp arrow(n)$, ou seja, $arrow(A P) dot arrow(n) = 0$, utilizando isso, a *equação geral do plano* $pi$ é 
+
+$ pi: a x + b y + c z + d = 0 $
+
+$ d = -a x_0 - b y_0 - c z_0 $
+
+== Equação vetorial do plano
+Sejam $A(x_0, y_0, z_0)$ um ponto de um plano $pi$, $arrow(u) = (a_1, b_1, c_1)$ e $arrow(v) = (a_2, b_2, c_2)$, dois vetores não colineares, paralelos a $pi$ e um ponto $P(x, y, z) in pi <=> exists lambda, mu in RR$ tais que $arrow(A P) = lambda arrow(u) + mu arrow(v) =>$ 
+
+$ pi: P = A + lambda arrow(u) + mu arrow(v) $
+
+Em coordenadas
+
+$ pi: (x,y,z) = (x_0, y_0, z_0) + lambda(a_1, b_1, c_1) + mu(a_2, b_2, c_2) $
+
+Essa é a *equação vetorial do plano* $pi$, $arrow(u)$ e $arrow(v)$ são chamados *vetores diretores do plano* $pi$ e $lambda "e" mu$ são chamados *parâmetros do plano* $pi$
+
+#pagebreak()
+
+== Equações paramétricas do plano
+Utilizando a equação vetorial se chega nas seguintes equações:
+
+$ cases(
+  x = x_0 + a_1 lambda + a_2 mu,
+  y = y_0 + b_1 lambda + b_2 mu,
+  z = z_0 + c_1 lambda + c_2 mu
+) $
+
+== Angulos entre planos
+Dados dois planos $pi_1$ e $pi_2$ com normais $arrow(n_1)$ e $arrow(n_2)$ respectivamente, o angulo $Phi$ entre $pi_1$ e $pi_2$ é definido como o menor ângulo $theta$ entre as retas $r_1$ e $r_2$ perpendiculares a $pi_1$ e $pi_2$. Assim o ângulo entre os planos é dado por:
+
+$ theta = arccos((|arrow(n_1) dot arrow(n_2)|)/(||arrow(n_1)|| ||arrow(n_2)||)), 0<= theta <= 90 $
+
+= Distâncias
+== Distância entre dois pontos
+$P_1(x_1, y_1, z_1)$ e $P_2(x_2, y_2, z_2)$ é $ "d"(P_1, P_2) = ||arrow(P_1 P_2)|| $
+
+== Distância entre ponto e reta
+Dados um ponto $P$, uma reta $r$ com vetor diretor $arrow(v)$ e um ponto $A in r$ a distância entre $P$ e $r$ é dada por:
+
+$ "d"(P, r) = (||arrow(A P) times arrow(v)||)/(||arrow(v)||) $
+
+== Distância entre ponto e plano
+Dado um ponto $P(x_0, y_0, z_0)$ e um plano $pi: a x + b y + c z + d = 0$ a distância entre  $P$ e $pi$ é dada por:
+
+$ "d"(P, pi) =  (|a x_0 + b y_0 + c z_0 + d|)/(sqrt(a^2 + b^2 + c^2)) $
