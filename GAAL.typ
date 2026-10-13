@@ -398,6 +398,29 @@ Dados um ponto $P$, uma reta $r$ com vetor diretor $arrow(v)$ e um ponto $A in r
 $ "d"(P, r) = (||arrow(A P) times arrow(v)||)/(||arrow(v)||) $
 
 == Distância entre ponto e plano
-Dado um ponto $P(x_0, y_0, z_0)$ e um plano $pi: a x + b y + c z + d = 0$ a distância entre  $P$ e $pi$ é dada por:
+Dado um ponto $P(x_0, y_0, z_0)$ um plano $pi: a x + b y + c z + d = 0$, um ponto $A(x,y,z) in pi$ e um vetor normal $arrow(n) perp pi$. A distância entre  $P$ e $pi$ é dada por:
 
-$ "d"(P, pi) =  (|a x_0 + b y_0 + c z_0 + d|)/(sqrt(a^2 + b^2 + c^2)) $
+$ "d"(P, pi) = (|arrow(A P) dot arrow(n)|)/(||arrow(n)||) = (|a x_0 + b y_0 + c z_0 + d|)/(sqrt(a^2 + b^2 + c^2)) $
+
+== Distância entre dois planos
+Dados dois planos $pi_1$ e $pi_2$ é dada por
+
+$ "d"(pi_1, pi_2) = cases(0"                             se" pi_1 parallel.not pi_2, "d"(P_1, pi_2) = "d"(pi_1, P_2)"   se" pi_1 parallel pi_2"," P_1 in pi_1 "e" P_2 in pi_2) $
+
+#pagebreak()
+
+== Distância entre uma reta e um plano
+Dados uma reta $r$ e um plano $pi$ é dado por:
+$ "d"(r, pi) = cases(0 "        se" r parallel.not pi, "d"(P, pi) "se" r parallel pi "e" P in r) $
+
+== Distância entre duas retas
+Dadas duas retas $r_1$ e $r_2$, a distância entre elas é dada por:
+$ "d"(r_1, r_2) = cases(
+  0 "                         se" r_1 inter r_2 = {I} "                (retas concorrentes)",
+  "d"(P_1, r_2) = "d"(P_2, r_1) "se" r_1 parallel r_2 "e" P_1 in r_1 "e" P_2 in r_2 "(retas paralelas)"
+) $
+
+=== Retas reversas
+Considerando as retas anteriores $r_1$ e $r_2$ sendo duas retas reversas (não paralelas e não concorrentes) e sejam $A_i in r_i$ e $v_i$ diretor de $r_i$, $i= 1,2$
+
+$ "d"(r_1, r_2) = (|(arrow(A_1  A_2), arrow(v_1), arrow(v_2))|)/(||v_1 times v_2||) $
