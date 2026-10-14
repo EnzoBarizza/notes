@@ -424,3 +424,95 @@ $ "d"(r_1, r_2) = cases(
 Considerando as retas anteriores $r_1$ e $r_2$ sendo duas retas reversas (não paralelas e não concorrentes) e sejam $A_i in r_i$ e $v_i$ diretor de $r_i$, $i= 1,2$
 
 $ "d"(r_1, r_2) = (|(arrow(A_1  A_2), arrow(v_1), arrow(v_2))|)/(||v_1 times v_2||) $
+
+= Matrizes
+Uma matrix $A$, de ordem $m times n$ é uma tabela de $m dot n$ números reais em $m$ linhas e $n$ colunas.
+
+$ A = mat(delim: "[",
+  a_(11), a_(12), dots, a_(1n);
+  a_(21), a_(22), dots, a_(2n);
+  dots.v, dots.v, dots.down, dots.v;
+  a_(m 1), a_(m 2), dots, a_(m n)
+) $
+
+A $i$-ésima linha de $A$ é $ mat(delim: "[", a_(i 1), a_(i 2), dots a_(i m)) $
+
+A $j$-ésima linha de $A$ é $ mat(delim: "[", a_(1 j); a_(2 j); dots.v; a_(m j)) $
+
+== Notações
+$ A = (a_(i j))_(m times n) $
+Onde $a_(i j)$ ou $[A]_(i j)$ é o elemento de entrada da posição: linha $i$ coluna $j$ da matriz $A$.
+
+Se $m$ = $n$ então a matriz $A$ é uma matriz quadrada de ordem $n$.
+
+Uma matriz de ordem $1 times m$ é uma matriz linha, e uma matrix $n times 1$ é uma matriz coluna.
+
+== Igualdade de matrizes
+Dadas duas matrizes $A = (a_(i j))_(m times n)$ e $B = (b_(i j))_(p times q)$, ambas são iguais se e somente se:
+$ m = p, n = q $ e $ a_(i j) = b_(i j) "para todo" i = 1, dots, m "e" j = 1, dots, n $
+
+== Operação entre matrizes
+=== Soma
+A soma de $A = (a_(i j))_(m times n)$ e $B = (b_(i j))_(m times n)$ (mesmo tamanho) é dado por $ C = (c_(i j))_(m times n) | c_(i j) = a_(i j)+ b_(i j) $
+
+Notações:
+$ C = A + B $
+$ [C]_(i j) = [A+B]_(i j) $
+
+=== Multiplicação
+A multiplicação de $A = (a_(i j))_(m times n)$ por um escalar $alpha in RR$ é $B = (b_(i j))_(m times n)$ tal que
+$ b_(i j) = alpha a_(i j) $
+
+Notações:
+$ B = alpha A $
+$ [B]_(i j) = [alpha A]_(i j) $
+
+$B$ é um multiplo escalar de $A$
+
+=== Produto de duas matrizes
+O produto $A B$ de duas matrizes $A$ e $B$ só é definido quando dadas duas matrizes, $ A = (a_(i j))_(m times p) "e" B = (b_(i j))_(p times n) $ o número de colunas da primeira matriz é igual o número de linhas da segunda, isso resulta na matrix $ C = (c_(i j))_(m times n) $ tal que $ c_(i j) = sum_(k=1)^p a_(i k) dot b_(k j) $
+
+==== Exemplo prático
+Visualmente é só multiplicar cada elemento de cada linha da primeira matriz por seu respectivo elemento na coluna na segunda matriz e somar. Ou seja, se você multiplicar a linha $i$ inteira de $A$ e a coluna $j$ inteira de $B$ você obtem o elemento $i j$ de $A B$.
+
+$ A = mat(delim: "[", 1, 2; 0, 1), " " B = mat(delim: "[", 3, 4; 5, 6) $
+$ A B = mat(delim: "[", 
+  (1 dot 3 + 2 dot 5), (1 dot 4 + 2 dot 6);
+  (0 dot 3 + 1 dot 5), (0 dot 4 + 1 dot 6)
+) = mat(delim: "[",
+  13, 16;
+  5, 6
+) $
+
+== Transposta de uma matriz
+A matriz transposta de $A = (a_(i j))_(m times n)$ é 
+
+$ A^t = (a^t_(i j))_(n times m) $
+
+tal que
+
+$ a^t_(i j) = a_(j i) $
+
+== Exemplo prático
+$ A = mat(delim: "[",
+  a, b, c;
+  d, e, f
+) $
+$ A^t = mat(delim: "[",
+  a, d; b, e; c, f
+) $
+
+== Propriedades
+Sejam $A, B "e" C$ matrizes de tamanhos apropriados e $alpha, beta in RR$, valem:
++ Comutatividade da soma $ A+B = B+A $
+
++ Associatividade da soma $ (A+B)+C = A+(B+C) $
+
++ $exists!$ de elemento neutro da soma $overline(0)$ tal que $A + overline(0) = A$, $overline(0)$ é a matriz nula
+
++ $exists!$ de elemento simétrico tal que dado $ A_(m times n) exists!B "tal que" A+B = overline(0), B = -A $
+
++ Associatividade de produto por escalar $ alpha(beta A) = beta(alpha A) = (alpha beta)A $
+
++ Distributiva de produto por escalar $ (alpha + beta)A = alpha A + beta A "e" (A+B)alpha = alpha A + alpha B $
+
