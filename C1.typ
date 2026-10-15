@@ -572,3 +572,57 @@ Sejam $lim_(x->a)f(x) = K$ e $lim_(x->a)g(x) = S$
 + Se $S = K = plus.minus infinity$ então $lim_(x->a)f(x)/g(x)$ é indeterminado. Se $S = K = 0$ então $lim_(x->a)f(x)/g(x)$ é indeterminado
 
 + Se $K = 0$ e $S = plus.minus infinity$, então $lim_(x->a)f(x)g(x) = 0 times (plus.minus infinity)$ é identerminado
+
+== Assíntotas
+=== Verticais
+A reta $x=a$ é assíntota do gráfico de $y = f(x)$, se pelo menos uma das seguintes afirmações forem verdadeiras
++ $ lim_(x->a^+) = +infinity $
+
++ $ lim_(x->a^-) = +infinity $
+
++ $ lim_(x->a^+) = -infinity $
+
++ $ lim_(x->a^-) = -infinity $
+
+=== Exemplo Gráfico
+
+#cetz.canvas({
+  import cetz.draw: *
+  import cetz-plot: *
+
+  plot.plot(
+  axis-style: "school-book",
+  size: (6,6),
+  x-tick-step: none,
+  y-tick-step: none,
+  {
+    plot.add(x => 1 / x, domain: (-5, -0.1), samples: 200, label: $f(x) = 1 / x$)
+    plot.add(x => 1 / x, domain: (0.1, 5), samples: 200, style: (stroke: blue))
+    plot.add(((0, -10), (0, 10)), label: $x = 0$)
+  })
+})
+
+A reta $x = 0$ é a assíntota vertical de $f(x)$ pois $lim_(x->0^+)1/x = 0 = lim_(x->0^-)1/x$
+
+== Horizontal
+A reta $y=b$ é a assíntota horizontal do gráfico de $y=f(x)$, se pelo menos uma das seguintes afirmações forem verdadeiras
++ $ lim_(x->+infinity)f(x) = b $
+
++ $ lim_(x->-infinity)f(x) = b $
+
+=== Exemplo gŕafico
+#cetz.canvas({
+  import cetz.draw: *
+  import cetz-plot: *
+
+  plot.plot(
+  axis-style: "school-book",
+  size: (6,6),
+  x-tick-step: none,
+  y-tick-step: none,
+  {
+    plot.add(x => 1 / x, domain: (-5, -0.1), samples: 200, label: $f(x) = 1 / x$)
+    plot.add(x => 1 / x, domain: (0.1, 5), samples: 200, style: (stroke: blue))
+    plot.add(((0, -10), (0, 10)), label: $x = 0$)
+  })
+})
