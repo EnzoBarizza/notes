@@ -516,3 +516,24 @@ Sejam $A, B "e" C$ matrizes de tamanhos apropriados e $alpha, beta in RR$, valem
 
 + Distributiva de produto por escalar $ (alpha + beta)A = alpha A + beta A "e" (A+B)alpha = alpha A + alpha B $
 
++ Associatividade de produto $ A(B C) = (A B) C $
+
++ Distributica $ A(B + C) = A B + A C $
+
++ Associatividade $ alpha(A B) = (alpha A) B = A (alpha B) $
+
++ Transposta da transposta $ (A^t)^t = A $
+
++ Transposta da soma $ (A+B)^t = A^t + B^t $
+
++ Transposta do produto $ (A B)^t = B^t A^t $
+
++ Transposta do produto por escalar $ (alpha A)^t = alpha A^t $
+
++ Matriz indentidade é uma matrix $n times n$ do formato $ mat(delim: "[", 
+  1, 0, dots, 0;
+  0, 1, dots, 0;
+  dots.v, dots.v, dots.down, dots.v;
+  0, 0, dots, 1
+) $ de ordem $n$ que satisfaz $A I_n = A, forall A_(m times n)$ e $I_n B = B, forall B_(n times m)$
+
