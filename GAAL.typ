@@ -459,6 +459,10 @@ Notações:
 $ C = A + B $
 $ [C]_(i j) = [A+B]_(i j) $
 
+Obs: Diferença de matrizes
+$ A - B  = A + (-A) $
+A diferença de matrizes é a soma de $A$ com o simétrico de $B$
+
 === Multiplicação
 A multiplicação de $A = (a_(i j))_(m times n)$ por um escalar $alpha in RR$ é $B = (b_(i j))_(m times n)$ tal que
 $ b_(i j) = alpha a_(i j) $
@@ -483,6 +487,9 @@ $ A B = mat(delim: "[",
   13, 16;
   5, 6
 ) $
+
+=== Potência de matrizes
+$ A^p = A dot A dot dots dot A = product_(k = 1)^p A $
 
 == Transposta de uma matriz
 A matriz transposta de $A = (a_(i j))_(m times n)$ é 
