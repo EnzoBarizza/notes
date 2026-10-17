@@ -492,14 +492,27 @@ Por fim, perceba que temos $|x - 2| < delta$ e $|x-2| < epsilon/5$, logo, o valo
 == Propriedades básicas de limites
 Se $lim_(x->a) f(x) "e" lim_(x->a) g(x)$ existem e $c$ é um número qualquer então:
 + Limite da soma $ lim_(x->a)[f(x) + g(x)] = lim_(x->a)f(x) + lim_(x->a)g(x) $
+
 + Limite de uma constante $ lim_(x->a)c = c $
+
 + Limite do produto $ lim_(x->a)f(x) dot g(x) = lim_(x->a)f(x) dot lim_(x->a)g(x) $
+
 + Limite do quociente $ lim_(x->a)f(x)/g(x) = (lim_(x->a)f(x))/(lim_(x->a)g(x)) ", se" lim_(x->a)g(x) != 0 $
+
 + Limite da exponenciação $ lim_(x->a)[f(x)]^n = [lim_(x->a)f(x)]^n ", " n in NN $
+
 + Limite da radiciação $ lim_(x->a)root(n, f(x)) = root(n, lim_(x->a)f(x)) $ $ n in NN, "desde que" n > 0 "e quando" n = 2k, k in ZZ "("n "é número par) então" lim_(x->a)f(x) > 0 $
+
 + Limite da logaritmação $ lim_(x->a)log_b [f(x)] = log_b [lim_(x->a)f(x)]," desde que," lim_(x->a)f(x) > 0 $
+
 + Limite do cosseno $ lim_(x->a)cos[f(x)] = cos(lim_(x->a)f(x)) $
+
 + Limite da exponencial natural: $ lim_(x->a) e^f(x) = e^(lim_(x->a)f(x)) $
+
++ Se $f(x) <= g(x)$ e o limite de $x -> a$ existe para ambas as funções então: $ lim_(x->a)f(x) <= lim_(x->a)g(x) $
+
++ Teorema do confronto: Se $f(x) <= g(x) <= h(x)$ quando $x -> a$ e $ lim_(x->a)f(x) = lim_(x->a)h(x) = L $ então $ lim_(x->a)g(x) = L $
+
 
 == Limites no infinito
 Limites infinitos são limites em que $x -> infinity$ ou $x -> -infinity$, analisando o comportamennto da função quando o $x$ cresce ou decresce indefinidamente.
