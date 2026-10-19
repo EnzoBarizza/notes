@@ -63,19 +63,3 @@
   outline()
   pagebreak()
 }
-
-#let pretty-box(body, color, color2, symbols) = {
-  pad(rest: 10pt)[
-    #box(fill: color, outset: 5pt, inset: 5pt, radius: 10pt)[
-      #text(fill: color2, size: 14pt)[
-        #symbols
-      ]
-      #align(center + horizon)[
-        #body
-      ]
-    ]
-  ]
-}
-
-#let def(body) = pretty-box(body, rgb(0, 255, 125, 150), rgb(0, 155, 100, 255), "Definição")
-#let obs(body) = pretty-box(body, rgb(0, 125, 255, 150), rgb(0, 80, 100, 255), "OBS")

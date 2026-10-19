@@ -639,3 +639,48 @@ A reta $y=b$ é a assíntota horizontal do gráfico de $y=f(x)$, se pelo menos u
     plot.add(((0, -10), (0, 10)), label: $x = 0$)
   })
 })
+
+== Limite fudamental trigonométrico
+#text(size: 14pt)[
+  $ lim_(x->0)sen(x)/x = 1 $
+]
+
+== Contínuidade
+Uma função $f$ é contínua em uma valor $a$ se o limite de $f(x) $ com $x -> a$ é igual a $f(a)$
+
+$ lim_(x->a)f(x) = f(a) $
+
+Obs: Essa igualdade traz três condições para a função $f$ ser contínua em $a$:
+
++ $f(a)$ está definida, ou seja, $f(a)$ existe.
++ $lim_(x->a)f(x)$ existe
++ $lim_(x->a)f(x) = f(a)$
+
+Caso a função não atenda essas três condições, a função $f$ é *descontínua* ou possui uma *descontinuidade* em $a$
+
+#cetz.canvas({
+  import cetz.draw: *
+  import cetz-plot: *
+
+  plot.plot(
+  axis-style: "school-book",
+  size: (6,6),
+  x-tick-step: none,
+  y-tick-step: none,
+  {
+    let f(x) = (calc.pow(x, 2) - x)/(x - 1)
+
+    plot.add(x => f(x), domain: (-5, 5), samples: 200, label: $ f(x) = (x^2 - x)/(x-1) $)
+    plot.add(((1, f(0.999)),), mark: "o", mark-style: (stroke: blue))
+  })
+})
+
+=== Classificações de continuidade
+==== Descontinuidade removível
+A função $f$ acima é descontinua em $x = 1$, e essa descontinuidade é chamada de *descontinuidade removível*, pois a $f(1)$ não existe, porém $lim_(x->1)f(x)$ existe então é classificada como descontinuidade removível
+
+==== Continuidade lateral
+Uma função $f$ é *contínua a direita em número* $a$ se $lim_(x->a^+)f(x) = f(a)$ e $f$ é *contínua à esquerda em* $a$ se $lim_(x->a^-)f(x) = f(a)$
+
+==== Continuidade em intervalo
+Uma função $f$ é contínua em um intervalo se for continua em todos os números do intervalo (se $f$ for definida somente de um lado da extremidade do intervalo, entendemos _continuidade_ na extremidade como _continuidade_ a direita ou à esquerda)
